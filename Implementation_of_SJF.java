@@ -48,3 +48,13 @@ public class Lab_1_SJF {
                 total++;
             }
         }
+        
+        System.out.println("\nProcessID  Arrival  Brust  Waiting");
+        for(int i = 0; i < n; i++){
+            avg_wait += wait[i];
+            System.out.println(process_id[i] + "\t" + arrival[i] + "\t" + burst_time[i] + "\t" + wait[i]);
+        }
+        System.out.println ("average waiting time is " + (float)(avg_wait/n));
+        sc.close();
+    }
+}

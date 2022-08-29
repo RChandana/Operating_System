@@ -39,3 +39,18 @@ class OS_Assignment_1{
                 }
             }
         }
+        for(int  i = 0 ; i < n; i++){
+            if( i == 0){
+                completion_time[i] = arrival[i] + burst_time[i];
+            }
+            else{
+                if( arrival[i] > completion_time[i-1]){
+                    completion_time[i] = arrival[i] + burst_time[i];
+                }
+                else
+                completion_time[i] = completion_time[i-1] + burst_time[i];
+            }
+            turn_around[i] = completion_time[i] - arrival[i] ;
+            wait[i] = turn_around[i] - burst_time[i] ; 
+            avg_wait += wait[i] ; 
+        }

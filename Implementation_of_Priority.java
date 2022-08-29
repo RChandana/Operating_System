@@ -41,3 +41,11 @@ public class Lab_1_Priority {
                 }
             }
         }
+        
+        wait[0] = 0;
+        turn_around[0] = burst_time[0];
+        for(int i = 1; i < n; i++){
+            wait[i] = turn_around[i - 1];
+            avg_wait += wait[i];
+            turn_around[i] = wait[i] + burst_time[i];
+        }

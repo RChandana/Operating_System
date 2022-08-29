@@ -22,3 +22,20 @@ class OS_Assignment_1{
 
             process_id[i] = i + 1;
         }
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n-(i+1); j++){
+                if(arrival[j] > arrival[j + 1]){
+                    temp = arrival[j];
+                    arrival[j] = arrival[j + 1];
+                    arrival[j + 1] = temp;
+
+                    temp = burst_time[j];
+                    burst_time[j] = burst_time[j+1];
+                    burst_time[j+1] = temp;
+
+                    temp = process_id[j];
+                    process_id[j] = process_id[j + 1];
+                    process_id[j + 1] = temp;
+                }
+            }
+        }

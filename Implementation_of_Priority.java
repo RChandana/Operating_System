@@ -49,3 +49,12 @@ public class Lab_1_Priority {
             avg_wait += wait[i];
             turn_around[i] = wait[i] + burst_time[i];
         }
+        
+        System.out.println("\nProcessID  Arrival  Burst_Time  Waiting  Priority");
+        for(int i = 0; i < n; i++){
+            System.out.println("\t " + process_id[i] + "\t " + arrival[i] + "\t " + burst_time[i] + "\t " + wait[i] + "\t " + process_priority[i]);
+        }
+        sc.close();
+        System.out.println("\nAverage waiting time : " + (avg_wait/n));
+    }
+}

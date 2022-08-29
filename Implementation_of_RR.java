@@ -47,3 +47,11 @@ public class Lab_1_RR {
             avg_wait = avg_wait + wait[i];
             System.out.print("\n  " + (i + 1) + "\t  " + burst_time[i] + "\t\t   " + wait[i]);
         }
+        
+        sc.close();
+        avg_wait = avg_wait / n;
+        System.out.println("\nAverage waiting Time = " + avg_wait);
+
+        
+  }
+}

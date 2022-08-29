@@ -54,3 +54,11 @@ class OS_Assignment_1{
             wait[i] = turn_around[i] - burst_time[i] ; 
             avg_wait += wait[i] ; 
         }
+        System.out.println("\nProcessID  Arrival  Burst_Time  Waiting");
+        for(int i = 0; i < n; i++){
+            System.out.println("\t " + process_id[i] + "\t " + arrival[i] + "\t " + burst_time[i] + "\t " + wait[i]);
+        }
+        sc.close();
+        System.out.println("\nAverage waiting time: "+ (avg_wait/n));
+    }
+}

@@ -36,3 +36,15 @@ public class Lab_1_SJF {
                     c = i;
                 }
             }
+            
+            if (c == n)
+            system_time++;
+            else{
+                completion_time[c] = system_time + burst_time[c];
+                system_time += burst_time[c];
+                turn_around[c] = completion_time[c] - arrival[c];
+                wait[c] = turn_around[c] - burst_time[c];
+                flag[c] = 1;
+                total++;
+            }
+        }

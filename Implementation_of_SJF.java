@@ -24,3 +24,15 @@ public class Lab_1_SJF {
             process_id[i] = i + 1;
             flag[i] = 0;
         }
+        
+        boolean a = true;
+        while(true){
+            int c = n, min = 999;
+            if (total == n) 
+            break;
+            for (int i = 0; i < n; i++){
+                if ((arrival[i] <= system_time) && (flag[i] == 0) && (burst_time[i] < min)){
+                    min = burst_time[i];
+                    c = i;
+                }
+            }

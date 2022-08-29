@@ -25,3 +25,19 @@ public class Lab_1_Priority {
 
             process_id[i] = i + 1;
         }
+        
+        for(int i = 0; i < n - 1; i++){
+            for(int j = i + 1; j < n; j++){
+                if(process_priority[i] > process_priority[j]){
+                    x = process_priority[i];
+                    process_priority[i] = process_priority[j];
+                    process_priority[j] = x;
+                    x = burst_time[i];
+                    burst_time[i] = burst_time[j];
+                    burst_time[j] = x;
+                    x = process_id[i];
+                    process_id[i] = process_id[j];
+                    process_id[j] = x;
+                }
+            }
+        }

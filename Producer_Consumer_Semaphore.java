@@ -28,3 +28,16 @@ class Producer_Consumer {
 		sem_Consumer.release();
 	}
 }
+
+class Producer implements Runnable {
+	Producer_Consumer pc;
+	Producer(Producer_Consumer q){
+		this.pc = q;
+		new Thread(this, "Producer").start();
+	}
+
+	public void run(){
+		for (int i = 0; i < 15; i++)
+			pc.put(i);
+	}
+}

@@ -41,3 +41,16 @@ class Producer implements Runnable {
 			pc.put(i);
 	}
 }
+
+class Consumer implements Runnable {
+	Producer_Consumer pc;
+	Consumer(Producer_Consumer q){
+		this.pc = q;
+		new Thread(this, "Consumer").start();
+	}
+
+	public void run(){
+		for (int i = 0; i < 15; i++)
+			pc.get();
+	}
+}

@@ -54,3 +54,11 @@ class Consumer implements Runnable {
 			pc.get();
 	}
 }
+
+class Producer_Consumer_2{
+	public static void main(String args[]){
+		Producer_Consumer pc = new Producer_Consumer();
+		new Consumer(pc);
+		new Producer(pc);
+	}
+}

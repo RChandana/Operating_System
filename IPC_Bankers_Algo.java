@@ -62,3 +62,14 @@ public class IPC_Banker {
 				break;
 			}
 		}
+		if (count < p){
+			System.out.println("The System is UnSafe!");
+		}
+		else{
+			System.out.println(" The SAFE Sequence is: ");
+			for (int i = 0; i < p; i++){
+				System.out.print("P" + safe_Sequence[i]);
+				if (i != p - 1)
+					System.out.print(" -> ");
+			}
+		}

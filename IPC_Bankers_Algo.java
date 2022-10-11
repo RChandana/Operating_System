@@ -23,7 +23,7 @@ public class IPC_Banker {
 			{ 0, 4, 1, 5 },
 			{ 3, 3, 3, 3 }
 		};
-		
+
 		available = new int[] { 1, 5, 2, 0, 6, 3};
 	}
 
@@ -73,7 +73,7 @@ public class IPC_Banker {
 					System.out.print(" -> ");
 			}
 		}
-		}
+	}
 
 	void get_Need(){
 		for (int i = 0; i < p; i++){
@@ -82,7 +82,7 @@ public class IPC_Banker {
 			}
 		}
 	}
-	
+
 	public static void main(String[] args){
 
 		IPC_Banker ba = new IPC_Banker();

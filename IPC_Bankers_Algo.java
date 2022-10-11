@@ -73,3 +73,12 @@ public class IPC_Banker {
 					System.out.print(" -> ");
 			}
 		}
+		}
+
+	void get_Need(){
+		for (int i = 0; i < p; i++){
+			for (int j = 0; j < r; j++){
+				need[i][j] = max[i][j] - allocation[i][j];
+			}
+		}
+	}

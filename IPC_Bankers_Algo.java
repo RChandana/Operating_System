@@ -82,3 +82,15 @@ public class IPC_Banker {
 			}
 		}
 	}
+	
+	public static void main(String[] args){
+
+		IPC_Banker ba = new IPC_Banker();
+
+		ba.provide_Values();
+
+		ba.get_Need();
+
+		ba.check_Safety();
+	}
+}

@@ -37,3 +37,28 @@ public class IPC_Banker {
 		for (int i = 0; i < r; i++){
 			work[i] = available[i];
 		}
+
+		while (count < p){
+			boolean flag1 = false;
+			for (int i = 0; i < p; i++){
+				if (flag[i] == false){
+					int j;
+					for (j = 0; j < r; j++){
+						if (need[i][j] > work[j])
+							break;
+					}
+					if (j == r){
+						safe_Sequence[count++] = i;
+						flag[i] = true;
+						flag1 = true;
+
+						for (j = 0; j < r; j++){
+							work[j] = work[j] + allocation[i][j];
+						}
+					}
+				}
+			}
+			if (flag1 == false){
+				break;
+			}
+		}

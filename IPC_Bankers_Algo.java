@@ -23,3 +23,17 @@ public class IPC_Banker {
 			{ 0, 4, 1, 5 },
 			{ 3, 3, 3, 3 }
 		};
+		
+		available = new int[] { 1, 5, 2, 0, 6, 3};
+	}
+
+	void check_Safety(){
+		int count = 0;
+		boolean flag[] = new boolean[p];
+		for (int i = 0; i < p; i++){
+			flag[i] = false;
+		}
+		int work[] = new int[r];
+		for (int i = 0; i < r; i++){
+			work[i] = available[i];
+		}

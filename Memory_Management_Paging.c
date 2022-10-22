@@ -13,3 +13,19 @@ int main(){
     printf("\nThe no. of pages available in memory are -- %d ", nop);
     printf("\nEnter number of processes -- ");
     scanf("%d", &np);
+    
+    rempages = nop;
+    for(i = 1; i <= np; i++){
+        printf("\nEnter no. of pages required for p[%d]-- ", i);
+        scanf("%d", &s[i]);
+        if(s[i] > rempages){
+            printf("\nMemory is Full");
+            break;
+            
+        }
+        rempages = rempages - s[i];
+        printf("\nEnter pagetable for p[%d] --- ", i);
+        for(j = 0; j < s[i]; j++)
+            scanf("%d", &fno[i][j]);
+        
+    }

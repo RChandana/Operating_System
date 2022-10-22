@@ -24,3 +24,23 @@ public class MainClass_Segmentation{
 			segment[i].set_Size(size);
 			segment[i].set_Unit(unit);
 		}
+		
+		System.out.println("Main memory size : ");
+		temp = sc.next();
+		size = convert(temp);
+		main_Memory_Size = size;
+		String main_Memory_Unit = unit;
+		main_Memory_Size = convert_To_Byte(main_Memory_Size, unit);
+		System.out.println("LOGICAL ADDRESS SPACE : ");
+		ip.generate_Logical_Address_Space(segment);
+		System.out.println();
+		int x = 0;
+		while(true){
+			System.out.print("Number of mapping in segment table : ");
+			x = sc.nextInt();
+			if(x > segment.length)
+				System.out.println("Error... number mapping is greater than number of segment.");
+			else{
+				break;
+			}
+		}

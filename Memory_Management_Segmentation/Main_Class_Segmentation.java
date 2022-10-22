@@ -59,3 +59,25 @@ public class MainClass_Segmentation{
 					flag1 = 1;
 					break;
 				}
+				
+				else{
+					long base_Address = sc.nextLong();
+					String y = sc.next();
+					long limit = convert(y);
+					System.out.println(segment_Number);
+					segment[segment_Number].set_Base(base_Address);
+					segment[segment_Number].set_Limit(limit);
+					segment[segment_Number].set_Limit_Unit(unit);
+					if(unit.equals("kb")){
+						segment[segment_Number].limit = segment[segment_Number].limit * 1024;
+					}
+					else if(unit.equals("mb")){
+						segment[segment_Number].limit = segment[segment_Number].limit * 1024 * 1024;
+					}
+					else if(unit.equals("gb")){
+						segment[segment_Number].limit = segment[segment_Number].limit * 1024 * 1024 * 1024;
+					}
+					else if(unit.equals("tb")){
+						segment[segment_Number].limit = segment[segment_Number].limit * 1024 * 1024 * 1024 * 1024;
+					}
+					

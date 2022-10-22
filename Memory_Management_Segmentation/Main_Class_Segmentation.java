@@ -44,3 +44,18 @@ public class MainClass_Segmentation{
 				break;
 			}
 		}
+		
+	int flag1 = 0;
+		int flag2 = 0;
+		long total_Limit = 0;
+		while(true){
+			System.out.println(" Segment_number Base_address Limit ");
+			System.out.println(" .............. ............ ..... ");
+			for (int i = 0; i < x; i++) {
+				int segment_Number = sc.nextInt();
+				if(segment_Number >= segment.length){
+					System.out.println("Segment Number is not in the logical memory.");
+					clear_Segments(segment);
+					flag1 = 1;
+					break;
+				}

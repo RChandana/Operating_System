@@ -81,3 +81,45 @@ public class MainClass_Segmentation{
 						segment[segment_Number].limit = segment[segment_Number].limit * 1024 * 1024 * 1024 * 1024;
 					}
 					
+					long temp_Limit = segment[segment_Number].limit;
+					long temp_Base = segment[segment_Number].get_Base();
+					long max = temp_Limit + temp_Base;
+					if(temp_Limit < segment[segment_Number].get_Size()){
+						System.out.println("Error at segment " + segment_Number + "... Limit of a segment can not be less than it's size.");
+						flag1 = 1;
+						clear_Segments(segment);
+						break;
+					}
+					total_Limit += temp_Limit;
+					for(int j = 0; j < segment.length; j++){
+						if(j != segment_Number){
+							long checkLimit = segment[j].get_Limit();
+							long checkBase = segment[j].get_Base();
+							long checkMax = checkLimit + checkBase;
+							if(temp_Base > checkMax || max < checkBase){	
+							}
+							else{
+								System.out.println("Error... Address overlapped between " + j + " and " + segment_Number + " segment.");
+								flag1 = 1;
+								flag2 = 1;
+								clear_Segments(segment);
+								break;
+							}
+						}
+					}
+				}
+				if(flag2 == 1){
+					flag2 = 0;
+					break;
+				}
+			}
+			if(total_Limit > main_Memory_Size){
+				total_Limit = 0;
+				flag1 = 1;
+				clear_Segments(segment);
+			}
+			if(flag1 == 0)
+				break;
+			flag1 = 0;
+		}
+					

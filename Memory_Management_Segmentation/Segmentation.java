@@ -17,3 +17,21 @@ public class Segment {
 		base = -1;
 		limit = -1;
 	}
+	public long get_Size() {
+		return size;
+	}
+	public void set_Size(long size) {
+		this.size = size;
+	}
+	public String get_Unit() {
+		return unit;
+	}
+	public void set_Unit(String unit) {
+		this.unit = unit;
+	}
+	public long get_Base() {
+		return base;
+	}
+	public void set_Base(long base) {
+		this.base = base;
+	}

@@ -29,3 +29,16 @@ int main(){
             scanf("%d", &fno[i][j]);
         
     }
+    
+    printf("\nEnter Logical Address to find Physical Address ");
+    printf("\nEnter process no. and pagenumber and offset -- ");
+    scanf("%d %d %d", &x, &y, &offset);
+    if(x > np || y >= s[i] || offset >= ps)
+        printf("\nInvalid Process or Page Number or offset");
+    else{ 
+        pa = fno[x][y] * ps + offset;
+        printf("\nThe Physical Address is -- %d", pa);
+        
+    }
+    getch();
+}

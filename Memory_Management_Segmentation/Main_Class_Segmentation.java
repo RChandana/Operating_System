@@ -150,3 +150,38 @@ public class MainClass_Segmentation{
 		ip.calculate_Physical_Address(segment, segment_Number, offset);
 		sc.close();
 	}
+
+	public static long convert(String string_Size){
+		long size = 0;
+		unit = "";
+		for(int i = 0; i < string_Size.length(); i++){
+			if(string_Size.charAt(i) >= '0' && string_Size.charAt(i) <= '9'){
+				size = (size * 10) + Character.getNumericValue(string_Size.charAt(i));
+			}
+			else{
+				unit = unit + string_Size.charAt(i);
+			}
+		}
+		return size;
+	}
+	public static long convert_To_Byte(long ss, String u){
+		if(u.equals("kb")){
+			ss = ss * 1024;
+		}
+		else if(u.equals("mb")){
+			ss = ss * 1024 * 1024;
+		}
+		else if(u.equals("gb")){
+			ss = ss * 1024 * 1024 * 1024;
+		}
+		else if(u.equals("tb")){
+			ss = ss * 1024 * 1024 * 1024 * 1024;
+		}
+		return ss;
+	}
+	public static void clear_Segments(Segment[] s){
+		for(int i = 0; i < s.length; i++){
+			s[i].clear_All();
+		}
+	}
+}

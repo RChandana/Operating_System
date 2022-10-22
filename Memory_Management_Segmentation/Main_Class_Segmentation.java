@@ -123,3 +123,30 @@ public class MainClass_Segmentation{
 			flag1 = 0;
 		}
 					
+		System.out.println("PHYSICAL ADDRESS SPACE:");
+		ip.generate_Physical_AddressSpace(segment);
+		System.out.println();
+		int segment_Number;
+		int offset;
+		flag1 = 0;
+		while (true) {
+			System.out.print("Segment No: ");
+			segment_Number = sc.nextInt();
+			System.out.print("Offset: ");
+			offset = sc.nextInt();
+			System.out.println();
+			if(segment[segment_Number].get_Size() == -1){
+				System.out.println("Segment not found in the segment table.");
+				flag1 = 1;
+			}
+			if(segment[segment_Number].get_Size() <= offset ){
+				System.out.println("Error... Offset is not valid.");
+				flag1 = 1;
+			}	
+			if(flag1 == 0)
+				break;
+			flag1 = 0;
+		}	
+		ip.calculate_Physical_Address(segment, segment_Number, offset);
+		sc.close();
+	}

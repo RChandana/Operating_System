@@ -12,3 +12,10 @@ int main() {
       printf("Unable to create pipe\n");
       return 1;
    }
+   pid = fork();
+   if (pid == 0) {
+      read(pipe_fds[0], read_message, sizeof(read_message));
+      printf("Child Process - Reading from pipe – Message 1 is %s\n", read_message);
+      read(pipe_fds[0], read_message, sizeof(read_message));
+      printf("Child Process - Reading from pipe – Message 2 is %s\n", read_message);
+   }

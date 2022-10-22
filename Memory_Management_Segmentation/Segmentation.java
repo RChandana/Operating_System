@@ -35,3 +35,17 @@ public class Segment {
 	public void set_Base(long base) {
 		this.base = base;
 	}
+	
+	public long get_Limit() {
+		return limit;
+	}
+	public void set_Limit(long limit) {
+		this.limit = limit;
+	}
+	public String get_Limit_Unit() {
+		return limit_Unit;
+	}
+	public void set_Limit_Unit(String limit_Unit) {
+		this.limit_Unit = limit_Unit;
+	}
+}

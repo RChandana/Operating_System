@@ -13,4 +13,14 @@ import java.util.*;
             m = sc.nextInt(); 
             fr = new int[m]; 
             fs = new int[m]; 
-        }
+	}
+      void display() { 
+        System.out.println("\n"); 
+        for(i = 0; i < m; i++) { 
+			if(fr[i] == -1) 
+            System.out.println("[ ]"); 
+        else 
+		    System.out.println("[" + fr[i] + "]"); 
+        } 
+    } 
+	    

@@ -39,3 +39,14 @@ import java.util.*;
 				break; 
 			} 
 		} 
+		
+		if(flag_1 == 0){ 
+			for(i = 0; i < m; i++){ 
+				if(fr[i] == -1){
+					fr[i] = p[j]; 
+					flag_2 = 1; 
+					
+					break;
+				} 
+			} 
+		} 

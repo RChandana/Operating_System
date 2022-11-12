@@ -67,3 +67,16 @@ import java.util.*;
 			fr[index] = p[j]; 
 			page_faults++; 
 		} 
+			
+		System.out.print("Page : " + p[j]);
+		display(); 
+	} 
+    System.out.println("\n Number of page faults : " + page_faults); 
+} 
+public static void main(String args[]){ 
+	Least_Recently_Used a = new Least_Recently_Used(); 
+	a.read(); 
+	a.lru(); 
+	a.display(); 
+	} 
+}

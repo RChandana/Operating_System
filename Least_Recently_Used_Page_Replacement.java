@@ -23,4 +23,19 @@ import java.util.*;
 		    System.out.println("[" + fr[i] + "]"); 
         } 
     } 
-	    
+
+    void lru() { 
+        for(i = 0; i < m; i++) { 
+			fr[i] =- 1; 
+        } 
+		for(j = 0; j < n; j++){ 
+			flag_1 = 0;
+			flag_2 = 0; 
+		for(i = 0; i < m; i++){ 
+			if(fr[i] == p[j]) { 
+				flag_1 = 1; 
+				flag_2 = 1; 
+				
+				break; 
+			} 
+		} 

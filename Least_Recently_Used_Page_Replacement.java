@@ -50,3 +50,20 @@ import java.util.*;
 				} 
 			} 
 		} 
+			
+		if(flag_2 == 0){ 
+			for(i = 0; i < 3; i++)
+			fs[i] = 0; 
+			for(k = j - 1, l = 1; l <= frame_size - 1; l++, k--){ 
+				for(i = 0; i < 3; i++){ 
+					if(fr[i] == p[k]) 
+					fs[i] = 1;
+				}
+			} 
+			for(i = 0; i < 3; i++){ 
+				if(fs[i] == 0) 
+				index = i;
+			} 
+			fr[index] = p[j]; 
+			page_faults++; 
+		} 

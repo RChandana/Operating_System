@@ -30,4 +30,26 @@ public class Optimal_Page_Replacement{
         }
         return (res == -1) ? 0 : res;
     }
+    
+    static void optimalPage(int number_of_pages, int pages[], int frame_size){
+        
+        int frame[] = new int[frame_size];
+        int f_sz = 0;
 
+        int hit = 0;
+        for(int i = 0; i < number_of_pages; i++){
+            if(search(pages[i], frame, frame_size) == 1){
+                hit++;
+                continue;
+            }
+
+            
+            if(f_sz < frame_size){
+                frame[f_sz] = pages[i];
+                f_sz++;
+            }
+            else{
+                int position = predict(pages, frame, number_of_pages, frame_size, i + 1);
+                frame[position] = pages[i];
+            }
+        }

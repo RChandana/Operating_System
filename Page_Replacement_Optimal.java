@@ -72,3 +72,10 @@ public class Optimal_Page_Replacement{
         for(int i = 0; i < number_of_pages; i++){
             pages[i] = sc.nextInt();
         }
+        
+        System.out.print("Frame Size : ");
+        frame_size = sc.nextInt();
+
+        optimalPage(number_of_pages, pages, frame_size);
+    }
+}

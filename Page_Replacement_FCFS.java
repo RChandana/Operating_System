@@ -14,3 +14,17 @@ class Test{
                     indexes.add(pages[i]);
                 }
             }
+            else{
+                if (!s.contains(pages[i])){
+                    int val = indexes.peek();
+      
+                    indexes.poll();
+                    s.remove(val);
+                    s.add(pages[i]);
+                    indexes.add(pages[i]);
+                    page_faults++;
+                }
+            }
+        }
+        return page_faults;
+    }

@@ -53,3 +53,22 @@ public class Optimal_Page_Replacement{
                 frame[position] = pages[i];
             }
         }
+        
+        System.out.println("Page Hit   : " + hit);
+        System.out.println("Page Fault : " + (number_of_pages - hit));
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int number_of_pages, frame_size;
+
+        System.out.print("Number of pages : ");
+        number_of_pages = sc.nextInt();
+
+        int pages[] = new int[number_of_pages];
+        System.out.println("Page string : ");
+
+        for(int i = 0; i < number_of_pages; i++){
+            pages[i] = sc.nextInt();
+        }

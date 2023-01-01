@@ -28,3 +28,11 @@ class Test{
         }
         return page_faults;
     }
+    
+    public static void main(String args[]){
+        int pages[] = {8, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 0};
+  
+        int capacity = 3;
+        System.out.println(page_Faults(pages, pages.length, capacity));
+    }
+}
